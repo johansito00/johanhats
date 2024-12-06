@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC chico hops</title>
+<style>
+/* Estilos globales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #737373;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #545454;
+  padding: 20px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #272c30;
+  transition: background-color 0.3s;
+}
+nav a:hover {
+  background-color: #ff4c4c;
+}
+h1, h2 {
+  color: #000000;
+}
+
+/* Estilos de la interfaz del producto */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.image-section {
+  flex: 1;
+  max-width: 500px;
+}
+.image-section img {
+  width: 100%;
+  border-radius: 10px;
+}
+.details-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+.price {
+  font-size: 28px;
+  color: #333;
+}
+.size-options,
+.quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.size-options button,
+.quantity button {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+.size-options button.active {
+  border-color: #333;
+  background-color: #ddd;
+}
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+.button-container button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.buy-now {
+  background-color: #333;
+  color: #fff;
+}
+.buy-now:hover {
+  background-color: #555;
+}
+.description {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Estilos del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+}
+.modal-content p {
+  margin: 10px 0;
+}
+.modal-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-content button:hover {
+  background-color: #555;
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<header>
+  <img src="logo.png" alt="Descripción de la imagen" width="240px" height="240">
+  <p></p>
+  <nav>
+    <a href="proyecto.html" class="categoria" data-categoria="todos">Inicio</a>
+    <a href="sobre.html" class="categoria" data-categoria="pasteles">Sobre Nosotros</a>
+  </nav>
+</header>
+
+<p>ㅤㅤ</p>
+<center><h2>𝓑𝓘𝓔𝓝𝓥𝓔𝓝𝓘𝓓𝓞 𝓐 𝓝𝓤𝓔𝓢𝓣𝓡𝓐 𝓣𝓘𝓔𝓝𝓓𝓐</h2></center>
+
+<!-- Interfaz del producto -->
+<div class="container">
+  <div class="image-section">
+    <img src="chaqueta2.jpg" alt="Chamarra Pericos de Puebla">
+  </div>
+  <div class="details-section">
+    <h1 class="title">Chamarra Pericos de Puebla</h1>
+    <p class="price">$990</p>
+    <div class="size-options">
+      <span>Talla:</span>
+      <button class="size-btn">S</button>
+       <button class="size-btn">M</button>
+      <button class="size-btn">L</button>
+      <button class="size-btn">XL</button>
+      <button class="size-btn">XXL</button>
+    </div>
+    <div class="quantity">
+      <span>Cantidad:</span>
+      <button id="decreaseQty">-</button>
+      <span id="quantity">1</span>
+      <button id="increaseQty">+</button>
+    </div>
+    <div class="button-container">
+      <button class="buy-now" id="buyNow">COMPRAR</button>
+    </div>
+    <p class="description">
+      Apoya a tu equipo favorito con estilo 
+    </p>
+  </div>
+</div>
+
+<!-- Modal de compra -->
+<div class="modal" id="purchaseModal">
+  <div class="modal-content">
+    <h3>Detalles de tu compra</h3>
+    <p id="purchaseDetails"></p>
+    <div class="modal-actions">
+      <button id="closeModal">Cerrar</button>
+      <button id="confirmPurchase">Confirmar Compra</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Selección de talla
+const sizeButtons = document.querySelectorAll('.size-btn');
+sizeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    sizeButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  });
+});
+
+// Control de cantidad
+let quantity = 1;
+const pricePerUnit = 2999; // Precio unitario
+const quantityDisplay = document.getElementById('quantity');
+const decreaseBtn = document.getElementById('decreaseQty');
+const increaseBtn = document.getElementById('increaseQty');
+
+decreaseBtn.addEventListener('click', () => {
+  if (quantity > 1) {
+    quantity--;
+    quantityDisplay.textContent = quantity;
+  }
+});
+
+increaseBtn.addEventListener('click', () => {
+  quantity++;
+  quantityDisplay.textContent = quantity;
+});
+
+// Compra y modal
+const buyNowButton = document.getElementById('buyNow');
+const modal = document.getElementById('purchaseModal');
+const modalDetails = document.getElementById('purchaseDetails');
+const closeModalButton = document.getElementById('closeModal');
+const confirmPurchaseButton = document.getElementById('confirmPurchase');
+
+buyNowButton.addEventListener('click', () => {
+  const total = pricePerUnit * quantity;
+  const selectedSize = document.querySelector('.size-btn.active');
+  const sizeText = selectedSize ? selectedSize.textContent : 'No seleccionada';
+  modalDetails.textContent = `Producto: Chamarra Pericos de Puebla\nTalla: ${sizeText}\nCantidad: ${quantity}\nTotal: $${total.toFixed(2)}`;
+  modal.style.display = 'flex';
+});
+
+closeModalButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+confirmPurchaseButton.addEventListener('click', () => {
+  alert('¡Compra confirmada con éxito!');
+  modal.style.display = 'none';
+});
+</script>
+
+</body>
+</html>

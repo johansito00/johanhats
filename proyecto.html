@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC chico hops</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+background-color: #737373;
+color: #000000;
+margin: 0;
+padding: 0;
+text-align: center;
+}
+header {
+background-color: #545454;
+padding: 20px;
+text-align: center;
+}
+nav {
+display: flex;
+justify-content: center;
+gap: 15px;
+}
+nav a {
+text-decoration: none;
+color: #fff;
+padding: 10px 15px;
+border-radius: 5px;
+background-color: #272c30;
+transition: background-color 0.3s;
+}
+nav a:hover {
+background-color: #ff4c4c;
+}
+h1, h2 {
+color: #000000;
+}
+.producto {
+border: 1px solid #272c30;
+border-radius: 10px;
+margin: 15px;
+padding: 10px;
+display: inline-block;
+text-align: center;
+background-color: #fff;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s;
+}
+.producto:hover {
+transform: scale(1.05);
+
+}
+.producto img {
+max-width: 100%;
+border-radius: 10px;
+}
+button {
+background-color: #272c30;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 15px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+button:hover {
+background-color: #ff4c4c;
+}
+footer {
+text-align: center;
+padding: 20px;
+background-color: #545454;
+}
+/* Modal Styles */
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.4);
+padding-top: 60px;
+}
+.modal-content {
+background-color: #fefefe;
+margin: 5% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 500px;
+}
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+/* Registro Estilizado */
+#registerForm {
+display: flex;
+flex-direction: column;
+gap: 10px;
+max-width: 300px;
+margin: auto;
+background: #fff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#registerForm input {
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #ddd;
+}
+#mensajeRegistro {
+margin-top: 10px;
+text-align: center;
+}
+/* Mensajes de error */
+.error {
+color: red;
+margin-top: 10px;
+text-align: center;
+}
+/* Carrito Estilizado */
+#carritoItems {
+max-height: 200px;
+overflow-y: auto;
+margin-bottom: 10px; 
+}
+/* Filtros */
+.filtros {
+margin: 20px;
+text-align: center;
+}
+.filtros button {
+margin: 0 5px;
+}
+</style>
+</head>
+<body>
+<header>
+
+<img src="logo.png" alt="Descripción de la imagen" width="240px" height="240">
+
+<nav>
+<a href="proyecto.html" class="categoria" data-categoria="todos">inicio</a>
+<a href="sobre.html" class="categoria" data-categoria="pasteles">sobre nosotros</a>
+
+<button id="carritoBtn"> 🛒 (<span id="cartCount">0</span>)</button>
+</nav>
+<center><b2> <b2></center>
+<p>ㅤㅤ</p>
+</header>
+<style>
+.slider-container {
+width: 980px;
+height: 250px;
+overflow: hidden;
+position: relative;
+margin: auto;
+}
+.slider-container img {
+width: 100%;
+height: auto;
+display: block;
+}
+.slider {
+display: flex;
+transition: transform 0.5s ease;
+}
+.slider-item {
+flex: 0 0 980px;
+}
+</style>
+</head>
+<body>
+<p>ㅤㅤ</p>
+<center><h2>𝓑𝓘𝓔𝓝𝓥𝓔𝓝𝓘𝓓𝓞 𝓐 𝓝𝓤𝓔𝓢𝓣𝓡𝓐 𝓣𝓘𝓔𝓝𝓓𝓐</h2> </center>
+<center> <h2>"OFERTAS "</h2> </center>
+
+
+<div class="producto" data-id="2" data-nombre="Storm Gray Basic" data-precio="750" data-categoria="pasteles">
+<h3>Los Angeles Dodgers </h3>
+<img src="oferta1.jpg"width="100px" height="100"><br>
+<p>Storm Gray Basic</p>
+<p> tallas 6 / 8</p>
+<p>ㅤ$750ㅤ</p><s>1000</s><br>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='oferta11.html';">Detalles</button>
+</div>
+
+
+<div class="producto" data-id="2" data-nombre="Arizona Diamondbacks" data-precio="750" data-categoria="pasteles">
+<h3>Arizona Diamondbacks </h3>
+<img src="OFERTA2.jpg"width="100px" height="100"><br>
+<p>2001 world series</p>
+<p> tallas 6 / 8</p>
+<p>ㅤ$750ㅤ</p><s>1000</s><br>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='oferta22.html';">Detalles</button>
+</div>
+
+
+<div class="producto" data-id="2" data-nombre="Chicago White Sox" data-precio="600" data-categoria="pasteles">
+<h3>Chicago White Sox </h3>
+<img src="OFERTA3.jpg"width="100px" height="100"><br>
+<p>Black and White Basic        </p>
+<p> tallas 6 / 8</p>
+<p>ㅤ$600ㅤ</p><s>1100</s><br>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='oferta33.html';">Detalles</button>
+</div>
+
+
+<div class="producto" data-id="2" data-nombre="Alternate Black and White" data-precio="900" data-categoria="pasteles">
+<h3>Los Angeles Dodgers</h3>
+<img src="OFERTA6.jpg"width="100px" height="100"><br>
+<p>Alternate Black and White Basic</p>
+<p> tallas 6 / 8</p>
+<p>ㅤ$900ㅤ</p><s>1,500</s><br>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='oferta44.html';">Detalles</button>
+</div>
+
+
+
+
+<p> </p>
+<div class="slider-container">
+<div class="slider">
+<div class="slider-item">
+<img src="carrusel1.jpg" alt="Imagen 1">
+</div>
+<div class="slider-item">
+<img src="carrusel2.jpg" alt="Imagen 2">
+</div>
+<div class="slider-item">
+<img src="carrusel2.jpg" alt="Imagen 3">
+</div>
+</div>
+</div>
+<p>ㅤㅤ</p>
+<p>ㅤㅤ</p>
+<section id="filtros" class="filtros">
+<h2>Filtrar Productos</h2>
+<button id="todosBtn">Todos</button>
+<button id="pastelesBtn">MLB</button>
+<button id="cookiesBtn">chaquetas</button>
+<button id="cafesBtn">mochilas</button>
+</section>
+
+
+<div class="producto" data-id="2" data-nombre=" Black and White Basic" data-precio="999" data-categoria="pasteles">
+<h3> New York Yankees </h3>
+<img src="gorra1.jpg"width="200px" height="200"><br>
+<p> Black and White Basic</p>
+<p> tallas 6 y 8 </p>
+<p>ㅤ$999ㅤ</p>
+
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='gorra11.html';">Detalles</button>
+</div>
+<div class="producto" data-id="2" data-nombre="Olive 59FIFTY" data-precio="999" data-categoria="pasteles">
+<h3>Los Angeles Dodgers</h3>
+<img src="gorra2.jpg"width="200px" height="200"><br>
+
+<p>Olive 59FIFTY Fitted</p>
+<p> talla unisex </p>
+<p>ㅤ$999ㅤ</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='gorra22.html';">Detalles</button>
+</div>
+
+<div class="producto" data-id="1" data-nombre="Gray Basic Fitted" data-precio="999" data-categoria="pasteles">
+<h3>Los Angeles Dodgers</h3>
+<img src="gorra3.jpg" alt="Descripción de la imagen"width="150px" height="200">
+<p>Gray Basic Fitted<br>
+<p> talla unisex<br></p>
+<p>ㅤ$999ㅤ</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='gorra33.html';">Detalles</button>
+</div>
+<br>
+<div class="producto" data-id="2" data-nombre="Mochila New Era Negra" data-precio="700" data-categoria="cafes">
+<h3>Mochila</h3>
+<img src="mochila1.jpg"witdh="150px" height="150"/><br>
+<p>Mochila New Era Negra </p>
+<p> unisex</p>
+<p>$700</p>
+<p>ㅤㅤ</p>
+
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='mochila11.html';">Detalles</button>
+</div>
+<div class="producto" data-id="3" data-nombre="MLB Back To School" data-precio="650" data-categoria="cafes">
+<h3>MLB Back To School</h3>
+<img src="mochila2.jpg"witdh="150px" height="150"/><br>
+<p>New York Yankees MLB </p>
+<p> Backpack Corduroy Stadium Verde</p>
+<p>$650</p>
+<p>ㅤㅤ</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='mochila22.html';">Detalles</button>
+</div>
+<div class="producto" data-id="1" data-nombre=" Back To School" data-precio="1000" data-categoria="cafes">
+<h3>Back To School</h3>
+<img src="mochila3.jpg"witdh="150px" height="150"/><br>
+<p>Back Carrier Pack Backpack Negra</p>
+<p> unisex</p>
+<br>
+<p>$1000</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='mochila33.html';">Detalles</button>
+</div>
+<br>
+<div class="producto" data-id="3" data-nombre="LMB Invenue" data-precio="999" data-categoria="cookies">
+<h3>LMB Invenue </h3>
+<img src="chaqueta1.jpg"witdh="150px" height="150"/><br>
+<p> Chamarra Pericos de Puebla</p>
+<p>talla s </p>
+<p>$999</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='chaqueta11.html';">Detalles</button>
+</div>
+<div class="producto" data-id="2" data-nombre="Chamarra Tony Delfino" data-precio="990" data-categoria="cookies">
+<h3>Chamarra Tony Delfino </h3>
+<img src="chaqueta2.jpg"witdh="150px" height="150"/><br>
+<p>tallas </p>
+<p> S M L </p>
+<p>ㅤ$990ㅤ</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='chaqueta22.html';">Detalles</button>
+</div>
+<div class="producto" data-id="3" data-nombre="Chamarra Varsity" data-precio="990" data-categoria="cookies">
+<h3>LAMP Supernature</h3>
+<img src="chaqueta3.jpg"witdh="150px" height="150"/><br>
+<p> Chamarra Varsity Charros de Jalisco</p>
+<p>Tallas S M L</p>
+<p>$990</p>
+<button class="agregarBtn">Agregar al carrito</button>
+<button class="categoria" data-categoria="todos" onclick="location.href='chaqueta33.html';">Detalles</button>
+</div>
+
+<script>
+const slider = document.querySelector('.slider');
+let counter = 0;
+const totalSlides = slider.children.length;
+function slide() {
+counter++;
+if (counter === totalSlides) {
+counter = 0;
+}
+slider.style.transform = `translateX(${-counter * 980}px)`;
+}
+setInterval(slide, 2500); // Cambia de slide cada 3 segundos
+</script>
+<section id="registrarse">
+<h2>contactanos</h2>
+<form id="registerForm">
+<input type="text" id="nombre" placeholder="Nombre" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="password" id="contraseña" placeholder="mensaje" required>
+<button type="submit">enviar</button>
+</form>
+<div id="mensajeRegistro"></div>
+<p>ㅤㅤ</p>
+<div id="carrito" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<h2>Carrito de Compras</h2>
+<div id="carritoItems"></div>
+<h3>Total: $<span id="totalPrecio">0.00</span></h3>
+<button id="comprarBtn">Comprar</button>
+</div>
+</div>
+<div id="detalleProducto" class="modal">
+<div class="modal-content">
+<span class="closeDetalle">&times;</span>
+<h2 id="detalleNombre"></h2>
+<p id="detalleDescripcion"></p>
+<button id="agregarDetalleBtn">Agregar al carrito</button>
+</div>
+</div>
+<footer>
+<p>&copy; 2024 Pc chico hops</p>
+</footer>
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Cargar productos en el carrito
+updateCartCount();
+// Agregar productos al carrito
+document.querySelectorAll('.agregarBtn').forEach(button => {
+button.addEventListener('click', () => {
+const producto = button.parentElement;
+const id = producto.getAttribute('data-id');
+const nombre = producto.getAttribute('data-nombre');
+const precio = parseFloat(producto.getAttribute('data-precio'));
+const item = { id, nombre, precio };
+cart.push(item);
+localStorage.setItem('cart', JSON.stringify(cart));
+updateCartCount();
+alert(`${nombre} agregado al carrito!`);
+});
+});
+// Mostrar el carrito
+document.getElementById('carritoBtn').addEventListener('click', () => {
+showCart();
+});
+// Función para mostrar el carrito
+function showCart() {
+const modal = document.getElementById('carrito');
+const carritoItems = document.getElementById('carritoItems');
+const totalPrecio = document.getElementById('totalPrecio');
+carritoItems.innerHTML = '';
+let total = 0;
+cart.forEach((item, index) => {
+carritoItems.innerHTML += `
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<span>${item.nombre} - $${item.precio.toFixed(2)}</span>
+<button class="eliminarBtn" data-index="${index}">Eliminar</button>
+</div>
+`;
+total += item.precio;
+});
+totalPrecio.textContent = total.toFixed(2);
+modal.style.display = "block";
+// Agregar eventos de eliminar
+document.querySelectorAll('.eliminarBtn').forEach(button => {
+button.addEventListener('click', (e) => {
+const index = e.target.getAttribute('data-index');
+cart.splice(index, 1);
+localStorage.setItem('cart', JSON.stringify(cart));
+showCart(); // Actualizar el carrito
+updateCartCount();
+});
+});
+}
+// Cerrar el modal del carrito
+document.querySelector('.close').onclick = function() {
+document.getElementById('carrito').style.display = "none";
+}
+// Registrar usuario
+document.getElementById('registerForm').addEventListener('submit', (e) => {
+e.preventDefault();
+const nombre = document.getElementById('nombre').value;
+const email = document.getElementById('email').value;
+const contraseña = document.getElementById('contraseña').value;
+const mensajeRegistro = document.getElementById('mensajeRegistro');
+// Validaciones básicas
+if (!nombre || !email || !contraseña) {
+mensajeRegistro.textContent = 'Por favor, completa todos los campos.';
+mensajeRegistro.className = 'error';
+return;
+}
+mensajeRegistro.textContent = 'Registro exitoso!';
+mensajeRegistro.className = '';
+// Limpiar el formulario
+e.target.reset();
+});
+// Comprar
+document.getElementById('comprarBtn').addEventListener('click', () => {
+if (cart.length === 0) {
+alert('El carrito está vacío.');
+return;
+}
+alert('Gracias por tu compra!');
+cart = [];
+localStorage.removeItem('cart');
+updateCartCount();
+document.getElementById('carrito').style.display = "none";
+});
+// Mostrar detalles del producto
+document.querySelectorAll('.detalleBtn').forEach(button => {
+button.addEventListener('click', () => {
+const producto = button.parentElement;
+const nombre = producto.getAttribute('data-nombre');
+const descripcion = `Descripción detallada de ${nombre}.`; // Cambiar por una descripción real
+document.getElementById('detalleNombre').textContent = nombre;
+document.getElementById('detalleDescripcion').textContent = descripcion;
+document.getElementById('detalleProducto').style.display = "block";
+// Agregar al carrito desde detalles
+document.getElementById('agregarDetalleBtn').onclick = () => {
+const precio = parseFloat(producto.getAttribute('data-precio'));
+const item = { id: producto.getAttribute('data-id'), nombre, precio };
+cart.push(item);
+localStorage.setItem('cart', JSON.stringify(cart));
+updateCartCount();
+alert(`${nombre} agregado al carrito!`);
+document.getElementById('detalleProducto').style.display = "none";
+}
+});
+});
+// Cerrar el modal de detalles
+document.querySelector('.closeDetalle').onclick = function() {
+document.getElementById('detalleProducto').style.display = "none";
+}
+// Actualizar conteo del carrito
+function updateCartCount() {
+const cartCount = document.getElementById('cartCount');
+cartCount.textContent = cart.length;
+}
+// Filtros de productos
+document.getElementById('todosBtn').addEventListener('click', () => filterProducts('todos'));
+document.getElementById('pastelesBtn').addEventListener('click', () => filterProducts('pasteles'));
+document.getElementById('cookiesBtn').addEventListener('click', () => filterProducts('cookies'));
+
+document.getElementById('cafesBtn').addEventListener('click', () => filterProducts('cafes'));
+function filterProducts(categoria) {
+const productos = document.querySelectorAll('.producto');
+productos.forEach(producto => {
+if (categoria === 'todos' || producto.getAttribute('data-categoria') === categoria) {
+producto.style.display = 'inline-block';
+} else {
+producto.style.display = 'none';
+}
+});
+}
+</script>
+</body>
+</html>
